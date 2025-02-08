@@ -64,6 +64,7 @@ def main(argv):
     set_random_seed(FLAGS.seed)
 
     tokenizer = AutoTokenizer.from_pretrained(FLAGS.tokenizer)
+    print('Loaded tokenizer')
     dataset = DatasetFactory.load_dataset(FLAGS.train_dataset, tokenizer)
     if FLAGS.load_dataset_state != '':
         dataset.load_state_dict(mlxu.load_pickle(FLAGS.load_dataset_state))
