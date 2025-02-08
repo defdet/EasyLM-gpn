@@ -16,7 +16,7 @@ import torch
 import flax
 from transformers import AutoModelForCausalLM
 
-from llama.llama_model import LLaMAConfigurator
+from EasyLM.llama.llama_model import LLaMAConfigurator
 from checkpoint import StreamingCheckpointer
 
 def get_float_dtype_by_name(dtype):
