@@ -4,15 +4,14 @@ from functools import partial
 
 from tqdm import tqdm, trange
 import numpy as np
-import mlxu
-
+from transformers import AutoTokenizer
+print('Imported easy libs')
 import jax
 import jax.numpy as jnp
 from jax.experimental.pjit import pjit
 from jax.sharding import PartitionSpec as PS
 from flax.training.train_state import TrainState
-from transformers import AutoTokenizer
-
+import mlxu
 from EasyLM.data import DatasetFactory
 from EasyLM.checkpoint import StreamingCheckpointer
 from EasyLM.optimizers import OptimizerFactory
