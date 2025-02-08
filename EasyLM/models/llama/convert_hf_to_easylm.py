@@ -10,7 +10,8 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = ''
 import time
 from pathlib import Path
-
+current_working_directory = os.getcwd()
+print(current_working_directory)
 import mlxu
 import torch
 import flax
@@ -18,10 +19,7 @@ from transformers import AutoModelForCausalLM
 
 from EasyLM.llama.llama_model import LLaMAConfigurator
 from checkpoint import StreamingCheckpointer
-current_working_directory = os.getcwd()
 
-# print output to the console
-print(current_working_directory)
 def get_float_dtype_by_name(dtype):
     return {
         'bf16': jnp.bfloat16,
