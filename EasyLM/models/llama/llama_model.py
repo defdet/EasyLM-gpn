@@ -198,6 +198,18 @@ class LLaMAConfigurator(object):
                 rms_norm_eps=1e-5,
                 rope_theta=5e5,
             ),
+            'qwen3B_llamafied': dict(
+                base_model='qwen3B_llamafied',
+                vocab_size=147097,
+                hidden_size=2048,
+                intermediate_size=11008,
+                num_hidden_layers=36,
+                num_attention_heads=16,
+                num_key_value_heads=2,
+                max_position_embeddings=4096,
+                rms_norm_eps=1e-5,
+                rope_theta=1000000.0,
+            ),
             'llama3_70b': dict(
                 base_model='llama3_8b',
                 vocab_size=128256,
