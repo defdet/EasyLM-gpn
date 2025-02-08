@@ -65,7 +65,7 @@ def main(argv):
     set_random_seed(FLAGS.seed)
     print("Loading")
 
-    tokenizer = AutoTokenizer.from_pretrained(FLAGS.tokenizer)
+    tokenizer = AutoTokenizer.from_pretrained(FLAGS.tokenizer, use_fast=False)
     print('Loaded tokenizer')
     dataset = DatasetFactory.load_dataset(FLAGS.train_dataset, tokenizer)
     if FLAGS.load_dataset_state != '':
