@@ -1,3 +1,4 @@
+print("Starting training")
 import pprint
 from functools import partial
 
@@ -24,6 +25,7 @@ from EasyLM.jax_utils import (
 from EasyLM.models.llama.llama_model import (
     LLaMAConfigurator, FlaxLLaMAForCausalLMModule
 )
+print("Actually starting training")
 
 
 FLAGS, FLAGS_DEF = mlxu.define_flags_with_default(
@@ -62,6 +64,7 @@ def main(argv):
         enable=FLAGS.log_all_worker or (jax.process_index() == 0),
     )
     set_random_seed(FLAGS.seed)
+    print("Loading")
 
     tokenizer = AutoTokenizer.from_pretrained(FLAGS.tokenizer)
     print('Loaded tokenizer')
