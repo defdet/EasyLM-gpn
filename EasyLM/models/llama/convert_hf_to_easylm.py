@@ -16,10 +16,20 @@ import torch
 import flax
 from transformers import AutoModelForCausalLM
 
-from EasyLM.models.llama.llama_model import LLaMAConfigurator
-from EasyLM.checkpoint import StreamingCheckpointer
-from EasyLM.jax_utils import get_float_dtype_by_name
+from llama.llama_model import LLaMAConfigurator
+from checkpoint import StreamingCheckpointer
 
+def get_float_dtype_by_name(dtype):
+    return {
+        'bf16': jnp.bfloat16,
+        'bfloat16': jnp.bfloat16,
+        'fp16': jnp.float16,
+        'float16': jnp.float16,
+        'fp32': jnp.float32,
+        'float32': jnp.float32,
+        'fp64': jnp.float64,
+        'float64': jnp.float64,
+    }[dtype]
 
 FLAGS, FLAGS_DEF = mlxu.define_flags_with_default(
     hf_model="",
