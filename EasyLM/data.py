@@ -331,6 +331,7 @@ class JsonDataset(object):
                     'dataset_accumulated_tps': accumulated_throughput,
                     'dataset_average_tps': average_throughput,
                 }
+                print(f'Tokens {token_buffer}, chunk size: {chunk_size}')
                 batch = {
                     'input_tokens': np.array(token_buffer[:chunk_size], dtype=np.int32).reshape(
                         self.config.batch_size, -1
