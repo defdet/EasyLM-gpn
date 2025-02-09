@@ -184,6 +184,7 @@ class StreamingCheckpointer(object):
             )
             restored_params = {'params': restored_params}
         elif load_type == 'params':
+            print('Loading params')
             # Load the params in the streaming format
             restored_params = cls.load_checkpoint(
                 path=load_path,
