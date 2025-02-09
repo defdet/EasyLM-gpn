@@ -77,7 +77,7 @@ class LLaMAConfigurator(object):
         config.num_key_value_heads = 32
         config.initializer_range = 0.02
         config.rms_norm_eps = 1e-6
-        config.max_position_embeddings = 2048
+        config.max_position_embeddings = 8192
         config.rope_theta = 1e4
         config.embedding_dropout = 0.0
         config.feedforward_dropout = 0.0
@@ -206,7 +206,7 @@ class LLaMAConfigurator(object):
                 num_hidden_layers=36,
                 num_attention_heads=16,
                 num_key_value_heads=2,
-                max_position_embeddings=4096,
+                max_position_embeddings=16384,
                 rms_norm_eps=1e-5,
                 rope_theta=1000000.0,
             ),
