@@ -1,11 +1,9 @@
-print("Starting training")
 import pprint
 from functools import partial
 
 from tqdm import tqdm, trange
 import numpy as np
 from transformers import AutoTokenizer
-print('Imported easy libs')
 import jax
 import jax.numpy as jnp
 from jax.experimental.pjit import pjit
@@ -24,8 +22,6 @@ from EasyLM.jax_utils import (
 from EasyLM.models.llama.llama_model import (
     LLaMAConfigurator, FlaxLLaMAForCausalLMModule
 )
-print("Actually starting training")
-
 
 FLAGS, FLAGS_DEF = mlxu.define_flags_with_default(
     seed=42,
