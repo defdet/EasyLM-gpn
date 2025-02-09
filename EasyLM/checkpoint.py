@@ -98,7 +98,6 @@ class StreamingCheckpointer(object):
             shard_fns = flatten_dict(
                 to_state_dict(shard_fns)
             )
-            print(f'Sharded fns: {shard_fns.keys()}')
         if remove_dict_prefix is not None:
             remove_dict_prefix = tuple(remove_dict_prefix)
         flattend_train_state = {}
