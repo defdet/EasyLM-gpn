@@ -210,9 +210,6 @@ def main(argv):
 
         start_step = int(jax.device_get(train_state.step))
 
-        if FLAGS.save_model_freq > 0:
-            save_checkpoint(train_state)
-
         sharded_rng = next_rng()
 
         step_counter = trange(start_step, FLAGS.total_steps, ncols=0)
