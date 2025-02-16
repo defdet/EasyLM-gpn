@@ -216,7 +216,7 @@ def main(argv):
         sharded_rng = next_rng()
 
         step_counter = trange(start_step, FLAGS.total_steps, ncols=0)
-
+        print(f'Starting training from step {start_step}')
         for step, (batch, dataset_metrics) in zip(step_counter, dataset):
             train_state, sharded_rng, metrics = sharded_train_step(
                 train_state, sharded_rng, batch
@@ -243,6 +243,7 @@ def main(argv):
             if FLAGS.save_milestone_freq > 0 and (step + 1) % FLAGS.save_milestone_freq == 0:
                 save_checkpoint(train_state, milestone=True)
             elif FLAGS.save_model_freq > 0 and (step + 1) % FLAGS.save_model_freq == 0:
+                print(f'Saving checkpoint at {step+1} step')
                 save_checkpoint(train_state)
 
         if FLAGS.save_model_freq > 0:
