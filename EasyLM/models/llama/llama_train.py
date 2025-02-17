@@ -65,6 +65,7 @@ def main(argv):
     print('Loaded tokenizer')
     dataset = DatasetFactory.load_dataset(FLAGS.train_dataset, tokenizer)
     if FLAGS.load_dataset_state != '':
+        print('Loading dataset state')
         dataset.load_state_dict(mlxu.load_pickle(FLAGS.load_dataset_state))
 
     if FLAGS.eval_steps > 0:
