@@ -65,9 +65,8 @@ def main(argv):
     print('Loaded tokenizer')
     dataset = DatasetFactory.load_dataset(FLAGS.train_dataset, tokenizer)
     print(f'Shoud attempt to load the dataset state with {FLAGS.load_dataset_state}')
-    if FLAGS.load_dataset_state != '':
-        print('Loading dataset state')
-        dataset.load_state_dict(mlxu.load_pickle(FLAGS.load_dataset_state))
+    print('Loading dataset state')
+    dataset.load_state_dict(mlxu.load_pickle('/kaggle/input/datasets-states/dataset_6000.pkl))
 
     if FLAGS.eval_steps > 0:
         eval_dataset = DatasetFactory.load_dataset(
