@@ -27,7 +27,7 @@ FLAGS, FLAGS_DEF = mlxu.define_flags_with_default(
     seed=42,
     mesh_dim='1,-1,1',
     dtype='fp32',
-    param_dtype='fp32',
+    param_dtype='bf16',
     total_steps=10000,
     load_llama_config='',
     update_llama_config='',
@@ -66,7 +66,7 @@ def main(argv):
     dataset = DatasetFactory.load_dataset(FLAGS.train_dataset, tokenizer)
     print(f'Shoud attempt to load the dataset state with {FLAGS.load_dataset_state}')
     print('Loading dataset state')
-    dataset.load_state_dict(mlxu.load_pickle('/kaggle/input/datasets-states/dataset_6000.pkl'))
+    dataset.load_state_dict(mlxu.load_pickle('/kaggle/input/datasets-states/dataset_13000.pkl'))
 
     if FLAGS.eval_steps > 0:
         eval_dataset = DatasetFactory.load_dataset(
