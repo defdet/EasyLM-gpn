@@ -88,7 +88,7 @@ def write_model(loaded, model_path):
     tmp_model_path = os.path.join(model_path, "tmp")
     os.makedirs(tmp_model_path, exist_ok=True)
 
-    llama_config = LLaMAConfigurator.finalize_config(FLAGS.llama)
+    llama_config = LLaMAConfigurator.finalize_config('qwen3B_llamafied')
 
     n_layers = llama_config.num_hidden_layers
     n_heads = llama_config.num_attention_heads
