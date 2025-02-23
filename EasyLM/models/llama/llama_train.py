@@ -67,7 +67,7 @@ def main(argv):
     print(f'Shoud attempt to load the dataset state with {FLAGS.load_dataset_state}')
     if True:
         print('Loading dataset state')
-        dataset.load_state_dict(mlxu.load_pickle('/kaggle/input/more-ds-states/dataset_43000.pkl'))
+        dataset.load_state_dict(mlxu.load_pickle('/kaggle/input/datasets-states/dataset_43000.pkl'))
 
     if FLAGS.eval_steps > 0:
         eval_dataset = DatasetFactory.load_dataset(
